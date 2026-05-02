@@ -3,3 +3,9 @@
 ################################################################################
 
 /CppProperties.json
+/vcpkg_installed
+/out/build/x64-Debug
+/.vs
+/build.py
+/CMakeSettings.json
+/vcpkg-configuration.json
