@@ -22,6 +22,7 @@ namespace interview {
 
         namespace {
 
+            // 获取JSON对象中的值
             template <typename T>
             T Require(const nlohmann::json& obj, const char* key) {
                 if (!obj.contains(key)) {
@@ -30,6 +31,7 @@ namespace interview {
                 return obj.at(key).get<T>();
             }
 
+            // 获取JSON对象
             const nlohmann::json& RequireObject(const nlohmann::json& obj, const char* key) {
                 if (!obj.contains(key)) {
                     throw std::runtime_error(std::string("Missing required configuration section: ") + key);
