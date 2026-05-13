@@ -152,11 +152,11 @@ namespace interview
 			* - 可重复调用（内部有状态检查）
 			* - 不会抛出异常（错误只记录日志）
 			*/
-			void close();
+			void Close();
 
 		private:
 			class RealtimeClientImpl;
-			std::unique_ptr<RealtimeClRealtimeClientImplient> piml_;
+			std::unique_ptr<RealtimeClientImpl> piml_;
 		};
 	}
 }
