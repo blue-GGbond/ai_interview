@@ -21,6 +21,7 @@ find_package(portaudio CONFIG REQUIRED)
 find_package(CURL REQUIRED)
 find_package(podofo CONFIG REQUIRED)
 find_package(spdlog CONFIG REQUIRED)
+find_package(CLI11 REQUIRED)
 
 # Qt依赖（必需，vcpkg的qtbase是Qt6）
 find_package(Qt6 COMPONENTS Core Widgets Gui QUIET)
@@ -107,4 +108,6 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     # 单元测试 (新加)
     GTest::gtest
     GTest::gtest_main
+
+    CLI11::CLI11
 )

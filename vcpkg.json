@@ -14,7 +14,8 @@
     "podofo",
     "spdlog",
     "qtbase",
-    "gtest"
+    "gtest",
+    "cli11"
   ],
   "overrides": [
     {
