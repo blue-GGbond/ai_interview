@@ -152,7 +152,7 @@ int main(int argc, char* argv[])
 	// ========== 配置LLM参数 ==========
 	// 如果用户提供了LLM配置参数，覆盖Config中的默认值
 	if (!llm_api_url.empty() || !llm_api_key.empty() || !llm_model.empty() || llm_temperature >= 0) {
-		auto& cfg = config::Config::Instance().llm_config;
+		auto& cfg = common::Config::Instance().llm_config;
 		if (!llm_api_url.empty()) {
 			cfg.api_url = llm_api_url;
 			LOG_INFO("LLM API URL: {}", cfg.api_url);
