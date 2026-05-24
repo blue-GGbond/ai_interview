@@ -487,11 +487,16 @@ namespace interview
 			}
 
 			ofs << report.dump(2); //2层缩进
-			ofs.close();
+		ofs.close();
 
-			LOG_INFO("Interview report saved to: {}", output_file);
+		LOG_INFO("Interview report saved to: {}", output_file);
 
-			return output_file;
-		}
+		return output_file;
 	}
+
+	int InterviewSession::GetCurrentQuestionIndex() const
+	{
+		return pimpl_->current_question_index;
+	}
+}
 }

@@ -12,6 +12,11 @@ if(MSVC)
     add_compile_options(/utf-8)
 endif()
 
+# 启用Qt的自动MOC、UIC、RCC
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+
 # 查找依赖库
 find_package(OpenSSL REQUIRED)
 find_package(Boost REQUIRED COMPONENTS system thread)
@@ -55,8 +60,8 @@ set(UI_HEADERS
 )
 
 set(MAIN_SOURCES
-    src/main_qt.cpp
-)
+		src/main.cpp
+	)
 
 set(SOURCES
     ${COMMON_SOURCES}

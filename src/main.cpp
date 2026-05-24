@@ -53,7 +53,7 @@ static session::DialogSession* g_session = nullptr;
  */
 void SignalHandler(int signal)
 {
-	std::cout << "\nReceived signal " << signal << ", stopping..." << std::end;
+	std::cout << "\nReceived signal " << signal << ", stopping..." << std::endl;
 	if (g_session)
 	{
 		g_session->Stop(); //优雅停止会话（保存报告、关闭连接）
@@ -183,7 +183,7 @@ int main(int argc, char* argv[])
 		LOG_INFO("");
 
 		// 延迟3秒，给用户准备时间
-		std::this_thread::sleep_for(config::timing::INTERVIEW_START_DELAY);
+		std::this_thread::sleep_for(common::timing::INTERVIEW_START_DELAY);
 
 		// 创建对话会话
 		session::DialogSession session(candidate_name);
@@ -225,7 +225,7 @@ int main(int argc, char* argv[])
 
 		// 轮询检查会话状态（每100ms检查一次）
 		while (session.IsRunning()) {
-			std::this_thread::sleep_for(config::timing::MAIN_LOOP_INTERVAL);
+			std::this_thread::sleep_for(common::timing::MAIN_LOOP_INTERVAL);
 		}
 
 		// 会话正常结束
